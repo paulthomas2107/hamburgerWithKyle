@@ -14,12 +14,19 @@ body {
   --hamburger-gap: 6px;
   --foreground: #333;
   --background: white;
+  --hamburger-margin: 8px;
 }
 
 .hamburger-menu {
   display: flex;
   flex-direction: column;
-  gap: var(--hamburger-gap)
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  top: var(--hamburger-margin);
+  left: var(--hamburger-margin);
+  z-index: 2;
+  cursor: pointer;
 }
 
 .hamburger-menu::before,
@@ -31,3 +38,17 @@ body {
   background-color: var(--foreground);
   border-radius: 9999px;
 }
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+/*
+.hamburger-menu input:checked {
+  background: red;
+}
+*/
